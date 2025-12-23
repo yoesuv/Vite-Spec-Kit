@@ -10,7 +10,7 @@
 ### Session 2025-12-23
 
 - Q: Post Data Structure - What validation rules apply to title and content fields? → A: Title required (1-200 chars), content required (1-10000 chars), both trimmed
-- Q: Data Persistence Strategy - Where should post data be stored and how does it persist between sessions? → A: Browser localStorage - posts persist locally per browser
+- Q: Data Persistence Strategy - Where should post data be stored and how does it persist between sessions? → A: JSONPlaceholder API - posts fetched from mock API (mutations return success but don't persist on server)
 - Q: Empty State Handling - What happens when there are no posts to display on the home page? → A: Show empty state with icon, message, and "Create Post" button
 - Q: Theme Persistence Mechanism - How should theme preference persist across page navigations and browser sessions? → A: localStorage key for theme preference
 - Q: Post List Sorting Order - How should posts be ordered in the list view? → A: Newest first (by createdAt descending)

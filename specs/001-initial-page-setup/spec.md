@@ -96,44 +96,43 @@ Users can view detailed information about individual posts in a dedicated detail
 
 ## Requirements _(mandatory)_
 
-<!--
 ### Functional Requirements
 
 - **FR-001**: System MUST display a sticky top navigation bar with "Home" and "Create" menu items centered horizontally
 - **FR-002**: System MUST provide a light/dark theme toggle icon positioned on the right side of the top navigation
 - **FR-003**: System MUST default to light theme on initial application load
 - **FR-004**: System MUST display posts as UI cards in a paginated list with 20 posts per page
-- **FR-005**: System MUST provide edit and delete action buttons on each post card
+- **FR-005**: System MUST provide edit and delete action buttons on each post card positioned on the right side
 - **FR-006**: System MUST show a confirmation dialog before deleting any post
 - **FR-007**: System MUST navigate to edit page when edit button is clicked
-- **FR-008**: System MUST navigate to detail page when post card is clicked
-- **FR-009**: System MUST maintain top navigation visibility across all pages
+- **FR-008**: System MUST navigate to detail page when post card body is clicked
+- **FR-009**: System MUST maintain top navigation visibility across all pages (Home, Create, Edit, Detail)
 - **FR-010**: System MUST display create, edit, and detail pages as card-style forms
 - **FR-011**: System MUST include back arrow navigation and appropriate page titles ("Create", "Edit", "Detail") in form cards
-- **FR-012**: System MUST validate all form inputs before submission
+- **FR-012**: System MUST validate all form inputs before submission on create and edit pages
 - **FR-013**: System MUST display success messages after successful create/edit operations
 - **FR-014**: System MUST redirect to Home page after successful create/edit operations
 - **FR-015**: System MUST refresh the post list after successful delete operations
+- **FR-016**: System MUST display pagination controls at the bottom of the post list showing page numbers
+- **FR-017**: System MUST allow users to navigate between pages using pagination controls
+- **FR-018**: System MUST persist theme preference across page navigations
 
 ### Key Entities
 
-- **Post**: Represents a content item with attributes like title, content, creation date, and unique identifier
-- **Theme**: Represents user interface appearance preference with light/dark mode options
-- **Navigation State**: Represents current page context and navigation history for proper back navigation
+- **Post**: Represents a content item with attributes such as title, content, creation timestamp, and unique identifier
+- **Theme Preference**: Represents user interface appearance setting with light and dark mode options
+- **Navigation State**: Represents current page context and navigation history for proper back navigation functionality
 
 ## Success Criteria _(mandatory)_
 
-<!--
-  ACTION REQUIRED: Define measurable success criteria.
-  These must be technology-agnostic and measurable.
--->
-
 ### Measurable Outcomes
 
-- **SC-001**: Users can navigate between all pages (Home, Create, Edit, Detail) in under 3 seconds per transition
-- **SC-002**: Theme switching occurs instantly (under 1 second) with visual feedback
-- **SC-003**: 95% of users successfully complete post creation/editing on their first attempt without validation errors
-- **SC-004**: Post list pagination loads within 2 seconds for up to 1000 posts
-- **SC-005**: Delete confirmation and post removal completes within 3 seconds
-- **SC-006**: Form validation provides immediate feedback (under 1 second) for invalid inputs
-- **SC-007**: Back navigation returns users to the correct previous page 100% of the time
+- **SC-001**: Users can navigate between all pages (Home, Create, Edit, Detail) with page transitions completing in under 2 seconds
+- **SC-002**: Theme switching occurs with visual feedback appearing within 500 milliseconds
+- **SC-003**: 90% of users successfully complete post creation or editing on their first attempt without encountering validation errors
+- **SC-004**: Post list with pagination loads and displays within 2 seconds for collections up to 1000 posts
+- **SC-005**: Delete confirmation dialog appears within 500 milliseconds and post removal completes within 2 seconds
+- **SC-006**: Form validation provides immediate feedback within 500 milliseconds for invalid inputs
+- **SC-007**: Back navigation returns users to the correct previous page 100% of the time maintaining proper navigation flow
+- **SC-008**: Pagination controls accurately reflect current page position and total page count
+- **SC-009**: Theme preference persists across all page navigations and browser sessions

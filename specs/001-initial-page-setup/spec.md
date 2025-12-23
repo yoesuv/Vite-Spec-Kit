@@ -127,10 +127,10 @@ Users can view detailed information about individual posts in a dedicated detail
 - **FR-015**: System MUST refresh the post list after successful delete operations
 - **FR-016**: System MUST display pagination controls at the bottom of the post list showing page numbers
 - **FR-017**: System MUST allow users to navigate between pages using pagination controls
-- **FR-018**: System MUST persist theme preference across page navigations and browser sessions using localStorage
-- **FR-019**: System MUST store all post data in browser localStorage for persistence across sessions
-- **FR-020**: System MUST load existing posts from localStorage on application initialization
-- **FR-021**: System MUST display an empty state when no posts exist, including an icon, descriptive message, and "Create Post" call-to-action button
+- **FR-018**: System MUST persist theme preference across page navigations and browser sessions using localStorage (note: only theme preference persists locally; post data is fetched from API)
+- **FR-019**: System MUST fetch post data from JSONPlaceholder API (https://jsonplaceholder.typicode.com) on application initialization and page navigation
+- **FR-020**: System MUST display an empty state when no posts exist, including an icon, descriptive message, and "Create Post" call-to-action button
+- **FR-021**: System MUST handle JSONPlaceholder API mock behavior where create/update/delete operations return success responses but do not persist data on the server
 
 ### Key Entities
 

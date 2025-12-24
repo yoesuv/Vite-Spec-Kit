@@ -24,10 +24,10 @@
 
 **Purpose**: Project initialization, dependencies, and basic structure
 
-- [ ] T001 Install required dependencies: antd, @ant-design/icons, yup, @tanstack/react-query, axios, react-router-dom
-- [ ] T002 [P] Create TypeScript interfaces for Post entity in src/types/post.ts
-- [ ] T003 [P] Create Yup validation schema in src/schemas/postSchema.ts
-- [ ] T004 [P] Create Axios instance with base URL configuration in src/api/postsApi.ts
+- [x] T001 Install required dependencies: antd, @ant-design/icons, yup, @tanstack/react-query, axios, react-router-dom
+- [x] T002 [P] Create TypeScript interfaces for Post entity in src/types/post.ts
+- [x] T003 [P] Create Yup validation schema in src/schemas/postSchema.ts
+- [x] T004 [P] Create Axios instance with base URL configuration in src/api/postsApi.ts
 
 ---
 
@@ -37,14 +37,14 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T005 Create ThemeContext with localStorage persistence in src/contexts/ThemeContext.tsx
-- [ ] T006 Create AppLayout component with sticky navigation, centered menu (Home/Create), and theme toggle in src/components/layout/AppLayout.tsx
-- [ ] T007 Create PageHeader component with back arrow and title in src/components/common/PageHeader.tsx
-- [ ] T008 Configure React Router with routes for Home, Create, Edit, Detail in src/App.tsx
-- [ ] T009 Setup QueryClient and wrap app with QueryClientProvider in src/App.tsx
-- [ ] T010 Create TanStack Query hooks for posts CRUD operations in src/hooks/usePosts.ts
-- [ ] T011 Implement API functions (getPosts, getPost, createPost, updatePost, deletePost) in src/api/postsApi.ts
-- [ ] T012 Update global styles for Ant Design integration in src/index.css
+- [x] T005 Create ThemeContext with localStorage persistence in src/contexts/ThemeContext.tsx
+- [x] T006 Create AppLayout component with sticky navigation, centered menu (Home/Create), and theme toggle in src/components/layout/AppLayout.tsx
+- [x] T007 Create PageHeader component with back arrow and title in src/components/common/PageHeader.tsx
+- [x] T008 Configure React Router with routes for Home, Create, Edit, Detail in src/App.tsx
+- [x] T009 Setup QueryClient and wrap app with QueryClientProvider in src/App.tsx
+- [x] T010 Create TanStack Query hooks for posts CRUD operations in src/hooks/usePosts.ts
+- [x] T011 Implement API functions (getPosts, getPost, createPost, updatePost, deletePost) in src/api/postsApi.ts
+- [x] T012 Update global styles for Ant Design integration in src/index.css
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -62,12 +62,12 @@
 
 ### Implementation for User Story 1
 
-- [ ] T013 [P] [US1] Create PostCard component displaying post title, body preview, edit/delete buttons in src/components/posts/PostCard.tsx
-- [ ] T014 [P] [US1] Create EmptyState component with icon, message, and "Create Post" button in src/components/posts/EmptyState.tsx
-- [ ] T015 [US1] Create PostList component with pagination (20 per page) using Ant Design Pagination in src/components/posts/PostList.tsx
-- [ ] T016 [US1] Create HomePage displaying PostList with loading/error states in src/pages/HomePage.tsx
-- [ ] T017 [US1] Verify theme toggle switches between light/dark mode with localStorage persistence
-- [ ] T018 [US1] Verify navigation between Home and Create menu items works correctly
+- [x] T013 [P] [US1] Create PostCard component displaying post title, body preview, edit/delete buttons in src/components/posts/PostCard.tsx
+- [x] T014 [P] [US1] Create EmptyState component with icon, message, and "Create Post" button in src/components/posts/EmptyState.tsx
+- [x] T015 [US1] Create PostList component with pagination (20 per page) using Ant Design Pagination in src/components/posts/PostList.tsx
+- [x] T016 [US1] Create HomePage displaying PostList with loading/error states in src/pages/HomePage.tsx
+- [x] T017 [US1] Verify theme toggle switches between light/dark mode with localStorage persistence
+- [x] T018 [US1] Verify navigation between Home and Create menu items works correctly
 
 **Checkpoint**: At this point, User Story 1 should be fully functional - users can view posts, paginate, switch themes, and navigate
 
@@ -85,11 +85,11 @@
 
 ### Implementation for User Story 2
 
-- [ ] T019 [US2] Add edit button click handler in PostCard to navigate to /edit/:id in src/components/posts/PostCard.tsx
-- [ ] T020 [US2] Add delete button click handler in PostCard to show Ant Design Modal.confirm in src/components/posts/PostCard.tsx
-- [ ] T021 [US2] Implement useDeletePost mutation with query invalidation in src/hooks/usePosts.ts
-- [ ] T022 [US2] Handle delete confirmation: call API, show success message, refresh post list in src/components/posts/PostCard.tsx
-- [ ] T023 [US2] Handle delete cancellation: close dialog without changes
+- [x] T019 [US2] Add edit button click handler in PostCard to navigate to /edit/:id in src/components/posts/PostCard.tsx
+- [x] T020 [US2] Add delete button click handler in PostCard to show Ant Design Modal.confirm in src/components/posts/PostCard.tsx
+- [x] T021 [US2] Implement useDeletePost mutation with query invalidation in src/hooks/usePosts.ts
+- [x] T022 [US2] Handle delete confirmation: call API, show success message, refresh post list in src/components/posts/PostCard.tsx
+- [x] T023 [US2] Handle delete cancellation: close dialog without changes
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work - users can view, edit navigation, and delete posts
 
@@ -107,13 +107,13 @@
 
 ### Implementation for User Story 3
 
-- [ ] T024 [P] [US3] Create PostForm component with Ant Design Form, title/body inputs, Yup validation in src/components/posts/PostForm.tsx
-- [ ] T025 [US3] Create CreatePage with PageHeader ("Create" title), PostForm, and success redirect in src/pages/CreatePage.tsx
-- [ ] T026 [US3] Create EditPage with PageHeader ("Edit" title), load existing post, PostForm, and success redirect in src/pages/EditPage.tsx
-- [ ] T027 [US3] Implement useCreatePost mutation with success message and redirect in src/hooks/usePosts.ts
-- [ ] T028 [US3] Implement useUpdatePost mutation with success message and redirect in src/hooks/usePosts.ts
-- [ ] T029 [US3] Add form validation error display using Ant Design Form.Item rules with Yup integration
-- [ ] T030 [US3] Implement back arrow navigation using useNavigate(-1) in PageHeader
+- [x] T024 [P] [US3] Create PostForm component with Ant Design Form, title/body inputs, Yup validation in src/components/posts/PostForm.tsx
+- [x] T025 [US3] Create CreatePage with PageHeader ("Create" title), PostForm, and success redirect in src/pages/CreatePage.tsx
+- [x] T026 [US3] Create EditPage with PageHeader ("Edit" title), load existing post, PostForm, and success redirect in src/pages/EditPage.tsx
+- [x] T027 [US3] Implement useCreatePost mutation with success message and redirect in src/hooks/usePosts.ts
+- [x] T028 [US3] Implement useUpdatePost mutation with success message and redirect in src/hooks/usePosts.ts
+- [x] T029 [US3] Add form validation error display using Ant Design Form.Item rules with Yup integration
+- [x] T030 [US3] Implement back arrow navigation using useNavigate(-1) in PageHeader
 
 **Checkpoint**: At this point, User Stories 1, 2, AND 3 should all work - full CRUD functionality available
 
@@ -131,11 +131,11 @@
 
 ### Implementation for User Story 4
 
-- [ ] T031 [US4] Create DetailPage with PageHeader ("Detail" title), full post content display in src/pages/DetailPage.tsx
-- [ ] T032 [US4] Add usePost hook for fetching single post by ID in src/hooks/usePosts.ts
-- [ ] T033 [US4] Add click handler on PostCard body to navigate to /post/:id in src/components/posts/PostCard.tsx
-- [ ] T034 [US4] Handle loading and error states in DetailPage
-- [ ] T035 [US4] Implement back arrow navigation to return to post list
+- [x] T031 [US4] Create DetailPage with PageHeader ("Detail" title), full post content display in src/pages/DetailPage.tsx
+- [x] T032 [US4] Add usePost hook for fetching single post by ID in src/hooks/usePosts.ts
+- [x] T033 [US4] Add click handler on PostCard body to navigate to /post/:id in src/components/posts/PostCard.tsx
+- [x] T034 [US4] Handle loading and error states in DetailPage
+- [x] T035 [US4] Implement back arrow navigation to return to post list
 
 **Checkpoint**: All user stories should now be independently functional - complete application ready
 
@@ -145,11 +145,11 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T036 [P] Add responsive design adjustments for mobile/tablet in src/index.css
-- [ ] T037 [P] Add loading spinners for all async operations using Ant Design Spin
-- [ ] T038 [P] Add error boundary for graceful error handling
-- [ ] T039 Code cleanup and ensure consistent styling across all components
-- [ ] T040 Run quickstart.md verification checklist
+- [x] T036 [P] Add responsive design adjustments for mobile/tablet in src/index.css
+- [x] T037 [P] Add loading spinners for all async operations using Ant Design Spin
+- [x] T038 [P] Add error boundary for graceful error handling
+- [x] T039 Code cleanup and ensure consistent styling across all components
+- [x] T040 Run quickstart.md verification checklist
 
 ---
 

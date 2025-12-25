@@ -5,6 +5,16 @@
 **Status**: Draft  
 **Input**: User description: "form create and edit post should use realtime validation with Yup. for showing error and enable/disable button"
 
+## Clarifications
+
+### Session 2025-12-25
+
+- Q: Validation Trigger Timing → A: Validate immediately on every keystroke from the start
+- Q: Specific Post Form Fields → A: Title (required, max 200 chars), Content (required, min 10 chars)
+- Q: Error Message Display Position → A: Below the field (between field and next element)
+- Q: Submit Button Disabled State Visual Indicator → A: Only disabled styling (grayed out, no explanation)
+- Q: Empty Field Initial State → A: No errors on initial load; errors appear only after user starts typing
+
 ## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Immediate Validation Feedback on Create Post Form (Priority: P1)
@@ -68,20 +78,21 @@ Users see descriptive, actionable error messages that clearly explain what's wro
 
 ### Functional Requirements
 
-- **FR-001**: System MUST validate all form fields in real-time as the user types or changes field values
+- **FR-001**: System MUST validate all form fields immediately on every keystroke from the moment the user starts typing in any field
 - **FR-002**: System MUST display validation error messages immediately when a field contains invalid data
 - **FR-003**: System MUST remove validation error messages immediately when a field's data becomes valid
-- **FR-004**: System MUST disable the form submit button when any field contains invalid data or required fields are empty
+- **FR-004**: System MUST disable the form submit button with disabled styling (grayed out appearance) when any field contains invalid data or required fields are empty, without additional tooltips or explanatory text
 - **FR-005**: System MUST enable the form submit button only when all fields contain valid data and all required fields are filled
 - **FR-006**: System MUST apply the same validation rules to both create post and edit post forms
 - **FR-007**: System MUST validate required fields to ensure they are not empty
 - **FR-008**: System MUST validate field formats according to defined rules (e.g., text length, character types)
-- **FR-009**: System MUST show validation errors in a visually distinct manner near the relevant form field
+- **FR-009**: System MUST display validation error messages directly below the relevant form field (between the field and the next element)
 - **FR-010**: System MUST prevent form submission when validation errors exist
+- **FR-011**: System MUST NOT display validation errors on initial form load; errors should only appear after the user begins typing in a field
 
 ### Key Entities
 
-- **Post Form**: Represents the user interface for creating or editing a post, containing multiple input fields with validation rules
+- **Post Form**: Represents the user interface for creating or editing a post, containing Title field (required, max 200 characters) and Content field (required, min 10 characters)
 - **Validation Rule**: Defines constraints for a form field (required, format, length, etc.) and associated error messages
 - **Form Field**: Individual input element within the post form with specific validation requirements
 - **Validation Error**: Represents a validation failure for a specific field, containing the error message and field identifier
@@ -96,7 +107,7 @@ Users see descriptive, actionable error messages that clearly explain what's wro
 
 **Assumptions**:
 
-- Post forms contain standard fields (e.g., title, content, etc.) that require validation
+- Post forms contain exactly two fields: Title (required, max 200 characters) and Content (required, min 10 characters)
 - Users have JavaScript enabled in their browsers for client-side validation
 - Validation feedback timing of 300ms is acceptable for user experience
 - Server-side validation will still be performed as a security measure (client-side validation is for UX only)

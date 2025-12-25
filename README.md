@@ -19,3 +19,18 @@ initial page setup - this application should be web application called "Vite Spe
 ```
 plan this using antdesign for UI components.Yup for validation. tanstack query + axios for API. and use base API url from https://jsonplaceholder.typicode.com/guide/. no unit test, integration test or other test at all.
 ```
+
+### Screenshots
+
+| ![](https://i.imgur.com/a7GTeEA.png) | ![](https://i.imgur.com/KhYK2Ne.png) |
+| :----------------------------------: | :----------------------------------: |
+| ![](https://i.imgur.com/JIHC1R3.png) | ![](https://i.imgur.com/OYek8KP.png) |
+| ![](https://i.imgur.com/Xm3MKZV.png) | ![](https://i.imgur.com/cUuhTMQ.png) |
+
+### Packages
+
+- [Ant Design](https://ant.design/)
+- [TanStack Query](https://tanstack.com/query/latest)
+- [Yup](https://github.com/jquense/yup)
+- [React Router DOM](https://reactrouter.com/)
+- [Axios](https://axios-http.com/)

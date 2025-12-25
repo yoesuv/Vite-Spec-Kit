@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { postSchema } from "../../schemas/postSchema";
 import type { PostFormData } from "../../types/post";
@@ -18,6 +19,8 @@ const PostForm = ({
   submitText = "Submit",
 }: PostFormProps) => {
   const [form] = Form.useForm<PostFormData>();
+  const [hasErrors, setHasErrors] = useState(true);
+  const [allTouched, setAllTouched] = useState(false);
 
   const validateField = async (field: string, value: string) => {
     try {
@@ -29,6 +32,15 @@ const PostForm = ({
       }
       return Promise.reject("Validation error");
     }
+  };
+
+  const handleFormChange = () => {
+    const errors = form
+      .getFieldsError()
+      .some(({ errors }) => errors.length > 0);
+    const touched = form.isFieldsTouched(true);
+    setHasErrors(errors);
+    setAllTouched(touched);
   };
 
   const handleFinish = (values: PostFormData) => {
@@ -44,11 +56,13 @@ const PostForm = ({
       layout="vertical"
       initialValues={initialValues}
       onFinish={handleFinish}
+      onFieldsChange={handleFormChange}
       autoComplete="off"
     >
       <Form.Item
         name="title"
         label="Title"
+        validateTrigger="onChange"
         rules={[
           {
             validator: (_, value) => validateField("title", value || ""),
@@ -61,6 +75,7 @@ const PostForm = ({
       <Form.Item
         name="body"
         label="Content"
+        validateTrigger="onChange"
         rules={[
           {
             validator: (_, value) => validateField("body", value || ""),
@@ -76,7 +91,13 @@ const PostForm = ({
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" loading={isLoading} block>
+        <Button
+          type="primary"
+          htmlType="submit"
+          loading={isLoading}
+          disabled={hasErrors || !allTouched}
+          block
+        >
           {submitText}
         </Button>
       </Form.Item>

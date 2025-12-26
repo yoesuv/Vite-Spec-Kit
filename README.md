@@ -1,75 +1,36 @@
-# React + TypeScript + Vite
+# Vite + Spec Kit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal research about spec-driven development using [Github Spec-Kit](https://github.com/github/spec-kit)
 
-Currently, two official plugins are available:
+### Constitution
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+declare principles for clean code, simple UX, responsive design, user experience consistency, performance requirements and minimal dependencies. no testing unit (no unit test, no integration test, etc) - this must supersede any other guidance.
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Specification
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+initial page setup - this application should be web application called "Vite SpecKit". there should be top navigation sticky with horizontal menu "Home", "Create", This menu should be in the center top navigation. on the right top navigation is icon switch light/dark theme, default is light. below top navigation is list post with UI card style with pagination per page 20, in the bottom have pagination number. this item post have two menu on the right, edit and delete. when click edit then go to edit page, similar like create page from top app bar. when click delete then show confirmation do delete if delete confirmed then remove the item post or reload list post. if card item post clicked then go to detail post. top navigation also stay visible to navigate. page create, edit, detail is form with Card style, inside this card have Row with arrow back (go to previous) and title for each create, edit, detail. page create and edit after success show message then redirect to Home (list post). all create/edit form should use validate input.
+```
+
+### Plan
+
+```
+plan this using antdesign for UI components.Yup for validation. tanstack query + axios for API. and use base API url from https://jsonplaceholder.typicode.com/guide/. no unit test, integration test or other test at all.
+```
+
+### Screenshots
+
+| ![](https://i.imgur.com/a7GTeEA.png) | ![](https://i.imgur.com/KhYK2Ne.png) |
+| :----------------------------------: | :----------------------------------: |
+| ![](https://i.imgur.com/JIHC1R3.png) | ![](https://i.imgur.com/OYek8KP.png) |
+| ![](https://i.imgur.com/Xm3MKZV.png) | ![](https://i.imgur.com/cUuhTMQ.png) |
+
+### Packages
+
+- [Ant Design](https://ant.design/)
+- [TanStack Query](https://tanstack.com/query/latest)
+- [Yup](https://github.com/jquense/yup)
+- [React Router DOM](https://reactrouter.com/)
+- [Axios](https://axios-http.com/)

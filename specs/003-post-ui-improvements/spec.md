@@ -5,6 +5,12 @@
 **Status**: Draft  
 **Input**: User description: "improve UI create and edit post with card style and proportional UI. use 60% width in the center. and styled input and button"
 
+## Clarifications
+
+### Session 2025-12-27
+
+- Q: Responsive behavior for the 60% centered card → A: Desktop: width 60% with max-width 900px + min-width 480px. Mobile: width 100% minus 16px padding
+
 ## User Scenarios & Testing _(mandatory)_
 
 <!--
@@ -62,7 +68,7 @@ A user accesses the post creation or editing interface on different screen sizes
 
 **Acceptance Scenarios**:
 
-1. **Given** a user accesses the interface on a smaller screen, **When** the viewport width is less than the card's fixed width, **Then** the card adjusts to use appropriate width percentage or padding to maintain readability
+1. **Given** a user accesses the interface on a smaller screen, **When** the viewport width is less than 480px, **Then** the card uses 100% width minus 16px padding on each side
 2. **Given** a user is on a mobile device, **When** they interact with form inputs, **Then** the inputs remain accessible and properly sized for touch interaction
 
 ---
@@ -80,7 +86,7 @@ A user accesses the post creation or editing interface on different screen sizes
 ### Functional Requirements
 
 - **FR-001**: Post creation interface MUST display within a card-style container that is centered horizontally on the page
-- **FR-002**: Post creation and editing cards MUST occupy 60% of the viewport width on desktop screens
+- **FR-002**: Post creation and editing cards MUST occupy 60% of the viewport width on desktop screens (minimum 480px, maximum 900px), and 100% width minus 16px padding on mobile screens
 - **FR-003**: All input fields (text inputs, textareas) MUST have consistent visual styling including borders, padding, focus states, and hover effects
 - **FR-004**: Submit and save buttons MUST have styled appearance with clear visual feedback for hover, active, and disabled states
 - **FR-005**: Post editing interface MUST use the same card layout and styling as the creation interface

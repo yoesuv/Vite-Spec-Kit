@@ -1,6 +1,6 @@
 # Feature Specification: Post Creation and Editing UI Improvements
 
-**Feature Branch**: `001-post-ui-improvements`  
+**Feature Branch**: `003-post-ui-improvements`  
 **Created**: December 27, 2025  
 **Status**: Draft  
 **Input**: User description: "improve UI create and edit post with card style and proportional UI. use 60% width in the center. and styled input and button"

@@ -29,9 +29,9 @@ description: "Task list for Post UI Improvements implementation"
 
 **Purpose**: Verify project structure and dependencies are ready
 
-- [ ] T001 Verify existing project structure matches plan.md (src/components/posts/, src/pages/)
-- [ ] T002 Verify Ant Design 6.1.2 is available in package.json dependencies
-- [ ] T003 [P] Verify React 19.2.0 and TypeScript 5.9.3 are configured correctly
+- [x] T001 Verify existing project structure matches plan.md (src/components/posts/, src/pages/)
+- [x] T002 Verify Ant Design 6.1.2 is available in package.json dependencies
+- [x] T003 [P] Verify React 19.2.0 and TypeScript 5.9.3 are configured correctly
 
 ---
 
@@ -41,9 +41,9 @@ description: "Task list for Post UI Improvements implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Add .post-form-card-container CSS class to src/index.css with flexbox centering
-- [ ] T005 [P] Add .post-form-card CSS class to src/index.css with 60% width, max 900px, min 480px
-- [ ] T006 [P] Add mobile media query (@media max-width: 768px) for .post-form-card to src/index.css
+- [x] T004 Add .post-form-card-container CSS class to src/index.css with flexbox centering
+- [x] T005 [P] Add .post-form-card CSS class to src/index.css with 60% width, max 900px, min 480px
+- [x] T006 [P] Add mobile media query (@media max-width: 768px) for .post-form-card to src/index.css
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -57,13 +57,13 @@ description: "Task list for Post UI Improvements implementation"
 
 ### Implementation for User Story 1
 
-- [ ] T007 [P] [US1] Create PostFormCard component in src/components/posts/PostFormCard.tsx with TypeScript interface
-- [ ] T008 [US1] Implement PostFormCard render logic with Ant Design Card component and container div
-- [ ] T009 [US1] Apply .post-form-card-container and .post-form-card CSS classes in PostFormCard
-- [ ] T010 [US1] Add title prop support to PostFormCard component
-- [ ] T011 [US1] Update CreatePage in src/pages/CreatePage.tsx to import PostFormCard
-- [ ] T012 [US1] Wrap PostForm with PostFormCard in CreatePage, pass title="Create New Post"
-- [ ] T013 [US1] Verify CreatePage maintains existing form submission logic and routing
+- [x] T007 [P] [US1] Create PostFormCard component in src/components/posts/PostFormCard.tsx with TypeScript interface
+- [x] T008 [US1] Implement PostFormCard render logic with Ant Design Card component and container div
+- [x] T009 [US1] Apply .post-form-card-container and .post-form-card CSS classes in PostFormCard
+- [x] T010 [US1] Add title prop support to PostFormCard component
+- [x] T011 [US1] Update CreatePage in src/pages/CreatePage.tsx to import PostFormCard
+- [x] T012 [US1] Wrap PostForm with PostFormCard in CreatePage, pass title="Create New Post"
+- [x] T013 [US1] Verify CreatePage maintains existing form submission logic and routing
 
 **Checkpoint**: At this point, User Story 1 should be fully functional - create post page has centered card layout
 
@@ -77,10 +77,10 @@ description: "Task list for Post UI Improvements implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T014 [US2] Update EditPage in src/pages/EditPage.tsx to import PostFormCard
-- [ ] T015 [US2] Wrap PostForm with PostFormCard in EditPage, pass title="Edit Post"
-- [ ] T016 [US2] Verify EditPage maintains existing form submission and data loading logic
-- [ ] T017 [US2] Verify EditPage maintains existing routing behavior
+- [x] T014 [US2] Update EditPage in src/pages/EditPage.tsx to import PostFormCard
+- [x] T015 [US2] Wrap PostForm with PostFormCard in EditPage, pass title="Edit Post"
+- [x] T016 [US2] Verify EditPage maintains existing form submission and data loading logic
+- [x] T017 [US2] Verify EditPage maintains existing routing behavior
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently with consistent card layout
 
@@ -94,11 +94,11 @@ description: "Task list for Post UI Improvements implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T018 [US3] Verify mobile media query applies width calc(100% - 32px) at viewport <768px
-- [ ] T019 [US3] Verify desktop constraints (60% width, max 900px, min 480px) at viewport >1024px
-- [ ] T020 [US3] Manually verify card layout at 1920px, 1024px, 768px, and 375px viewport widths
-- [ ] T021 [US3] Verify touch targets remain accessible on mobile (Ant Design defaults)
-- [ ] T022 [US3] Verify smooth visual transitions during viewport resize
+- [x] T018 [US3] Verify mobile media query applies width calc(100% - 32px) at viewport <768px
+- [x] T019 [US3] Verify desktop constraints (60% width, max 900px, min 480px) at viewport >1024px
+- [x] T020 [US3] Manually verify card layout at 1920px, 1024px, 768px, and 375px viewport widths
+- [x] T021 [US3] Verify touch targets remain accessible on mobile (Ant Design defaults)
+- [x] T022 [US3] Verify smooth visual transitions during viewport resize
 
 **Checkpoint**: All user stories should now be independently functional with full responsive behavior
 
@@ -108,14 +108,14 @@ description: "Task list for Post UI Improvements implementation"
 
 **Purpose**: Improvements that affect multiple user stories and final quality checks
 
-- [ ] T023 [P] Verify WCAG 2.1 AA contrast ratios for card background and text in both light and dark themes
-- [ ] T024 [P] Verify focus indicators are visible on all form inputs (Ant Design defaults)
-- [ ] T025 [P] Verify hover states on buttons provide feedback within 50ms
-- [ ] T026 Verify card visibility on page load is under 1 second
-- [ ] T027 Verify keyboard navigation works correctly through all form elements
-- [ ] T028 [P] Test theme switching (light/dark) maintains proper card styling
-- [ ] T029 Code cleanup: Remove any unused imports or commented code
-- [ ] T030 Run quickstart.md validation checklist for all scenarios
+- [x] T023 [P] Verify WCAG 2.1 AA contrast ratios for card background and text in both light and dark themes
+- [x] T024 [P] Verify focus indicators are visible on all form inputs (Ant Design defaults)
+- [x] T025 [P] Verify hover states on buttons provide feedback within 50ms
+- [x] T026 Verify card visibility on page load is under 1 second
+- [x] T027 Verify keyboard navigation works correctly through all form elements
+- [x] T028 [P] Test theme switching (light/dark) maintains proper card styling
+- [x] T029 Code cleanup: Remove any unused imports or commented code
+- [x] T030 Run quickstart.md validation checklist for all scenarios
 
 ---
 

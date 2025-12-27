@@ -37,6 +37,25 @@ body {
   -webkit-box-orient: vertical;
 }
 
+.post-form-card-container {
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.post-form-card {
+  width: 60%;
+  max-width: 900px;
+  min-width: 480px;
+}
+
+@media (max-width: 768px) {
+  .post-form-card {
+    width: calc(100% - 32px);
+    min-width: unset;
+  }
+}
+
 @media (max-width: 768px) {
   .ant-layout-content {
     padding: 16px !important;

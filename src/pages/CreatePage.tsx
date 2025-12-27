@@ -2,6 +2,7 @@ import { message } from "antd";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../components/common/PageHeader";
 import PostForm from "../components/posts/PostForm";
+import PostFormCard from "../components/posts/PostFormCard";
 import { useCreatePost } from "../hooks/usePosts";
 import type { PostFormData } from "../types/post";
 
@@ -26,11 +27,13 @@ const CreatePage = () => {
   return (
     <div>
       <PageHeader title="Create" />
-      <PostForm
-        onSubmit={handleSubmit}
-        isLoading={createPostMutation.isPending}
-        submitText="Create Post"
-      />
+      <PostFormCard title="Create New Post">
+        <PostForm
+          onSubmit={handleSubmit}
+          isLoading={createPostMutation.isPending}
+          submitText="Create Post"
+        />
+      </PostFormCard>
     </div>
   );
 };

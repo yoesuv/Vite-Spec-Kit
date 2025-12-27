@@ -2,6 +2,7 @@ import { message, Spin, Alert } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import PageHeader from "../components/common/PageHeader";
 import PostForm from "../components/posts/PostForm";
+import PostFormCard from "../components/posts/PostFormCard";
 import { usePost, useUpdatePost } from "../hooks/usePosts";
 import type { PostFormData } from "../types/post";
 
@@ -58,12 +59,14 @@ const EditPage = () => {
   return (
     <div>
       <PageHeader title="Edit" />
-      <PostForm
-        initialValues={{ title: post.title, body: post.body }}
-        onSubmit={handleSubmit}
-        isLoading={updatePostMutation.isPending}
-        submitText="Update Post"
-      />
+      <PostFormCard title="Edit Post">
+        <PostForm
+          initialValues={{ title: post.title, body: post.body }}
+          onSubmit={handleSubmit}
+          isLoading={updatePostMutation.isPending}
+          submitText="Update Post"
+        />
+      </PostFormCard>
     </div>
   );
 };

@@ -5,6 +5,16 @@
 **Status**: Draft  
 **Input**: User description: "To create post validation is already working fine. But, the edit/update posts need to be fixed. because, when first loaded it should enable button. And also, when edit description if valid should be enabled the button"
 
+## Clarifications
+
+### Session 2025-12-28
+
+- Q: On edit form load, if the existing post description is invalid (empty/null/below min), should Submit be enabled? → A: No, keep Submit disabled until valid.
+- Q: When the edit form loads with valid existing data and the user makes no changes, should Submit still send an update request? → A: Yes, still send update.
+- Q: While edit form data is still loading (before values populate), should Submit be enabled? → A: No, keep Submit disabled until data loaded and validation runs.
+- Q: Should a description that is only whitespace be treated as invalid? → A: Yes, whitespace-only is invalid (trim before validate).
+- Q: When should validation run while editing the description? → A: On every change, debounced.
+
 ## User Scenarios & Testing _(mandatory)_
 
 <!--
@@ -75,6 +85,7 @@ The validation behavior for editing posts should match the validation behavior f
 - What happens when validation rules change while a user is editing a post?
 - How does the system handle posts with special characters or very long descriptions?
 - What happens when a user opens an edit form, makes it invalid, then reverts to the original valid state?
+- On edit form load, invalid existing description MUST keep submit disabled until valid.
 
 ## Requirements _(mandatory)_
 
@@ -87,6 +98,11 @@ The validation behavior for editing posts should match the validation behavior f
 - **FR-005**: System MUST apply the same validation rules to edit operations as create operations
 - **FR-006**: System MUST preserve the current validation state when user navigates away and returns to edit form
 - **FR-007**: System MUST provide visual feedback indicating whether the submit button is enabled or disabled
+- **FR-008**: System MUST keep submit button disabled on edit form load if existing post data is invalid
+- **FR-009**: System MUST allow submitting an unchanged but valid edit form and MUST send the update request on submit
+- **FR-010**: System MUST keep submit button disabled while edit form data is loading and only compute enabled state after data load and validation completes
+- **FR-011**: System MUST treat whitespace-only descriptions as invalid (trim input before validation)
+- **FR-012**: System MUST validate description on every change using a debounce to prevent excessive validation while typing
 
 ### Key Entities
 

@@ -24,8 +24,8 @@ plan this using antdesign for UI components.Yup for validation. tanstack query +
 
 | ![](https://i.imgur.com/a7GTeEA.png) | ![](https://i.imgur.com/KhYK2Ne.png) |
 | :----------------------------------: | :----------------------------------: |
-| ![](https://i.imgur.com/JIHC1R3.png) | ![](https://i.imgur.com/OYek8KP.png) |
-| ![](https://i.imgur.com/Xm3MKZV.png) | ![](https://i.imgur.com/cUuhTMQ.png) |
+| ![](https://i.imgur.com/NdvhAML.png) | ![](https://i.imgur.com/6s4oCEI.png) |
+| ![](https://i.imgur.com/Xm3MKZV.png) | ![](https://i.imgur.com/SFCnQ0H.png) |
 
 ### Packages
 

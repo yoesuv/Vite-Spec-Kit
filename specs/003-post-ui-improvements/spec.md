@@ -9,19 +9,19 @@
 
 ### Session 2025-12-27
 
-- Q: Responsive behavior for the 60% centered card → A: Desktop: width 60% with max-width 900px + min-width 480px. Mobile: width 100% minus 16px padding
+- Q: Responsive behavior for the 60% centered card → A: Desktop: width 60% with max-width 900px + min-width 480px. Mobile/tablet (<768px): width calc(100% - 32px) (16px padding each side)
 
-## User Scenarios & Testing _(mandatory)_
+## User Scenarios & Manual Verification _(mandatory)_
 
 <!--
   IMPORTANT: User stories should be PRIORITIZED as user journeys ordered by importance.
-  Each user story/journey must be INDEPENDENTLY TESTABLE - meaning if you implement just ONE of them,
+  Each user story/journey must be INDEPENDENTLY VERIFIABLE (manual) - meaning if you implement just ONE of them,
   you should still have a viable MVP (Minimum Viable Product) that delivers value.
 
   Assign priorities (P1, P2, P3, etc.) to each story, where P1 is the most critical.
   Think of each story as a standalone slice of functionality that can be:
   - Developed independently
-  - Tested independently
+  - Verified independently (manual)
   - Deployed independently
   - Demonstrated to users independently
 -->
@@ -32,7 +32,7 @@ A user wants to create a new post using a clean, centered card-style interface t
 
 **Why this priority**: This is the core functionality that delivers immediate value by improving the primary user interaction. A well-designed creation interface directly impacts user satisfaction and content creation efficiency.
 
-**Independent Test**: Can be fully tested by navigating to the post creation page, verifying the card layout is centered at 60% width, and successfully creating a post with styled inputs and buttons.
+**Manual Verification**: Navigate to the post creation page, verify the card layout is centered at 60% width, and successfully create a post with styled inputs and buttons.
 
 **Acceptance Scenarios**:
 
@@ -48,7 +48,7 @@ A user wants to edit an existing post using the same improved card-style interfa
 
 **Why this priority**: Consistency across create and edit flows reduces cognitive load and provides a cohesive user experience. This builds on P1 by extending the improved design to the editing workflow.
 
-**Independent Test**: Can be fully tested by navigating to edit an existing post, verifying the same card layout and styling is applied, and successfully updating the post.
+**Manual Verification**: Navigate to edit an existing post, verify the same card layout and styling is applied, and successfully update the post.
 
 **Acceptance Scenarios**:
 
@@ -64,11 +64,11 @@ A user accesses the post creation or editing interface on different screen sizes
 
 **Why this priority**: While the centered 60% width works well on desktop, responsive behavior ensures the interface remains usable on tablets and mobile devices. This is lower priority as the core functionality works without it, but enhances accessibility.
 
-**Independent Test**: Can be fully tested by resizing the browser window or accessing the interface on different devices, verifying the card adapts appropriately without breaking layout or usability.
+**Manual Verification**: Resize the browser window or access the interface on different devices, verifying the card adapts appropriately without breaking layout or usability.
 
 **Acceptance Scenarios**:
 
-1. **Given** a user accesses the interface on a smaller screen, **When** the viewport width is less than 480px, **Then** the card uses 100% width minus 16px padding on each side
+1. **Given** a user accesses the interface on a smaller screen, **When** the viewport width is less than 768px, **Then** the card uses `calc(100% - 32px)` width (16px padding on each side)
 2. **Given** a user is on a mobile device, **When** they interact with form inputs, **Then** the inputs remain accessible and properly sized for touch interaction
 
 ---
@@ -86,13 +86,13 @@ A user accesses the post creation or editing interface on different screen sizes
 ### Functional Requirements
 
 - **FR-001**: Post creation interface MUST display within a card-style container that is centered horizontally on the page
-- **FR-002**: Post creation and editing cards MUST occupy 60% of the viewport width on desktop screens (minimum 480px, maximum 900px), and 100% width minus 16px padding on mobile screens
+- **FR-002**: Post creation and editing cards MUST occupy 60% of the viewport width on desktop screens (minimum 480px, maximum 900px), and `calc(100% - 32px)` width on <768px layouts (16px padding on each side)
 - **FR-003**: All input fields (text inputs, textareas) MUST have consistent visual styling including borders, padding, focus states, and hover effects
 - **FR-004**: Submit and save buttons MUST have styled appearance with clear visual feedback for hover, active, and disabled states
 - **FR-005**: Post editing interface MUST use the same card layout and styling as the creation interface
 - **FR-006**: Form inputs MUST provide clear visual feedback when focused or active
 - **FR-007**: Card container MUST have appropriate spacing, shadows, or borders to distinguish it from the page background
-- **FR-008**: Layout MUST maintain vertical centering or appropriate top margin for the card container
+- **FR-008**: Card container MUST use a consistent top spacing of 24px on desktop and 16px on <768px layouts (no vertical centering)
 - **FR-009**: Interface MUST support both light and dark color schemes with appropriate contrast ratios
 
 ### Key Entities

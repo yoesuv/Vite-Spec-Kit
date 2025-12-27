@@ -7,7 +7,7 @@
 
 ## Summary
 
-Enhance post creation and editing interfaces with a centered card-style layout (60% width, max 900px, min 480px on desktop; full width minus 32px padding on mobile). Improve form input and button styling with consistent visual feedback. UI-only changes using existing Ant Design components with custom CSS for responsive layout. No API or data model changes required.
+Enhance post creation and editing interfaces with a centered card-style layout (60% width, max 900px, min 480px on desktop; `calc(100% - 32px)` width on <768px layouts with 16px side gutters). Improve form input and button styling with consistent visual feedback. UI-only changes using existing Ant Design components with custom CSS for responsive layout. No API or data model changes required.
 
 ## Technical Context
 

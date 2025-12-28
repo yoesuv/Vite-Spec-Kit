@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Form, Input, Button } from "antd";
 import { postSchema } from "../../schemas/postSchema";
 import type { PostFormData } from "../../types/post";
@@ -22,6 +22,23 @@ const PostForm = ({
   const [hasErrors, setHasErrors] = useState(true);
   const [allTouched, setAllTouched] = useState(false);
 
+  const isEditMode = Boolean(initialValues);
+
+  useEffect(() => {
+    if (isEditMode && initialValues) {
+      form
+        .validateFields()
+        .then(() => {
+          setHasErrors(false);
+          setAllTouched(true);
+        })
+        .catch(() => {
+          setHasErrors(true);
+          setAllTouched(false);
+        });
+    }
+  }, [initialValues, form, isEditMode]);
+
   const validateField = async (field: string, value: string) => {
     try {
       await postSchema.validateAt(field, { [field]: value });
@@ -38,7 +55,9 @@ const PostForm = ({
     const errors = form
       .getFieldsError()
       .some(({ errors }) => errors.length > 0);
-    const touched = form.isFieldsTouched(true);
+    const touched = isEditMode
+      ? form.isFieldsTouched(false)
+      : form.isFieldsTouched(true);
     setHasErrors(errors);
     setAllTouched(touched);
   };

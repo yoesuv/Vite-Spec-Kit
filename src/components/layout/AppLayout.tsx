@@ -1,7 +1,7 @@
 import { Layout, Menu, Switch } from "antd";
 import { SunOutlined, MoonOutlined } from "@ant-design/icons";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
-import { useTheme } from "../../contexts/ThemeContext";
+import { useTheme } from "../../contexts/useTheme";
 
 const { Header, Content } = Layout;
 

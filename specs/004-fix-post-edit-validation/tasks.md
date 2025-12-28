@@ -24,6 +24,8 @@ description: "Task list for Fix Post Edit Validation feature"
 - **Primary Target**: `src/components/posts/PostForm.tsx`
 - **Secondary Target**: `src/pages/EditPage.tsx` (verification only, no changes needed)
 
+**Terminology**: The spec uses the user-facing term **"description"**. In the current codebase and schema this is represented by the form field **`body`**. Tasks below may reference `body` when verifying/implementing description validation.
+
 ---
 
 ## Phase 1: Setup (Shared Infrastructure)
@@ -70,14 +72,15 @@ description: "Task list for Fix Post Edit Validation feature"
 
 ### Implementation for User Story 1
 
-- [ ] T009 [US1] Add edit mode detection logic in src/components/posts/PostForm.tsx (add `const isEditMode = Boolean(initialValues);` after state declarations)
-- [ ] T010 [US1] Add useEffect hook for initial validation in edit mode in src/components/posts/PostForm.tsx (validate on mount when initialValues provided)
-- [ ] T011 [US1] Implement validation success handler in useEffect to set hasErrors=false and allTouched=true in src/components/posts/PostForm.tsx
-- [ ] T012 [US1] Implement validation error handler in useEffect to set hasErrors=true and allTouched=false in src/components/posts/PostForm.tsx
-- [ ] T013 [US1] Add useEffect dependency array [initialValues, form, isEditMode] in src/components/posts/PostForm.tsx
-- [ ] T014 [US1] Verify no changes needed to EditPage.tsx (already passes initialValues correctly)
-- [ ] T015 [US1] Manual test: Open edit form with valid data, verify button enabled immediately (quickstart.md checklist item 2)
-- [ ] T016 [US1] Manual test: Click submit without changes, verify post updates successfully (quickstart.md checklist item 2)
+- [ ] T009 [US1] (FR-001, FR-010) Add edit mode detection logic in src/components/posts/PostForm.tsx (add `const isEditMode = Boolean(initialValues);` after state declarations)
+- [ ] T010 [US1] (FR-001, FR-010) Add useEffect hook for initial validation in edit mode in src/components/posts/PostForm.tsx (validate on mount when initialValues provided)
+- [ ] T011 [US1] (FR-001, FR-003, SC-001) Implement validation success handler in useEffect to set hasErrors=false and allTouched=true in src/components/posts/PostForm.tsx
+- [ ] T012 [US1] (FR-008) Implement validation error handler in useEffect to set hasErrors=true and allTouched=false in src/components/posts/PostForm.tsx
+- [ ] T013 [US1] (FR-001, FR-010) Add useEffect dependency array [initialValues, form, isEditMode] in src/components/posts/PostForm.tsx
+- [ ] T014 [US1] Verify EditPage.tsx passes initialValues to PostForm component (check form.setFieldsValue or initialValues prop)
+- [ ] T015 [US1] Verify no additional changes needed to EditPage.tsx beyond initialValues passing
+- [ ] T016 [US1] (SC-001, SC-003) Manual test: Open edit form with valid data, verify button enabled immediately (quickstart.md checklist item 2)
+- [ ] T017 [US1] (FR-009) Manual test: Click submit without changes, verify post updates successfully (quickstart.md checklist item 2)
 
 **Checkpoint**: At this point, User Story 1 should be fully functional - submit button enables on edit form load with valid data
 
@@ -97,14 +100,14 @@ description: "Task list for Fix Post Edit Validation feature"
 
 ### Implementation for User Story 2
 
-- [ ] T017 [US2] Verify existing handleFormChange function correctly updates hasErrors state in src/components/posts/PostForm.tsx
-- [ ] T018 [US2] Verify existing handleFormChange function correctly updates allTouched state in src/components/posts/PostForm.tsx
-- [ ] T019 [US2] Verify validateField function correctly validates body field with trim in src/components/posts/PostForm.tsx
-- [ ] T020 [US2] Verify Form.Item for body field has validateTrigger="onChange" in src/components/posts/PostForm.tsx
-- [ ] T021 [US2] Manual test: Edit valid description to another valid value, verify button stays enabled (quickstart.md checklist item 5)
-- [ ] T022 [US2] Manual test: Edit valid description to invalid value (<10 chars), verify button disables (quickstart.md checklist item 5)
-- [ ] T023 [US2] Manual test: Edit invalid description to valid value (>10 chars), verify button enables (quickstart.md checklist item 5)
-- [ ] T024 [US2] Manual test: Verify button state updates within 100ms (performance requirement SC-002)
+- [ ] T018 [US2] Verify existing handleFormChange function correctly updates hasErrors state in src/components/posts/PostForm.tsx
+- [ ] T019 [US2] Verify existing handleFormChange function correctly updates allTouched state in src/components/posts/PostForm.tsx
+- [ ] T020 [US2] Verify validateField function correctly validates body field with trim in src/components/posts/PostForm.tsx
+- [ ] T021 [US2] Verify Form.Item for body field has validateTrigger="onChange" in src/components/posts/PostForm.tsx
+- [ ] T022 [US2] Manual test: Edit valid description to another valid value, verify button stays enabled (quickstart.md checklist item 5)
+- [ ] T023 [US2] Manual test: Edit valid description to invalid value (<10 chars), verify button disables (quickstart.md checklist item 5)
+- [ ] T024 [US2] Manual test: Edit invalid description to valid value (>10 chars), verify button enables (quickstart.md checklist item 5)
+- [ ] T025 [US2] Manual test: Verify button state updates within 100ms (performance requirement SC-002)
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work - button enables on load AND during editing
 
@@ -124,14 +127,14 @@ description: "Task list for Fix Post Edit Validation feature"
 
 ### Implementation for User Story 3
 
-- [ ] T025 [US3] Verify create form behavior unchanged (button disabled on load) in src/pages/CreatePage.tsx
-- [ ] T026 [US3] Verify same postSchema validation rules used for both create and edit in src/schemas/postSchema.ts
-- [ ] T027 [US3] Verify same validateField function logic for both modes in src/components/posts/PostForm.tsx
-- [ ] T028 [US3] Verify same handleFormChange logic for both modes in src/components/posts/PostForm.tsx
-- [ ] T029 [US3] Verify same button disabled logic (hasErrors || !allTouched) for both modes in src/components/posts/PostForm.tsx
-- [ ] T030 [US3] Manual test: Create new post, verify button disabled until all fields valid (quickstart.md checklist item 1)
-- [ ] T031 [US3] Manual test: Verify validation error messages identical between create and edit
-- [ ] T032 [US3] Manual test: Verify whitespace-only input treated as invalid in both modes (quickstart.md checklist item 4)
+- [ ] T026 [US3] Verify create form behavior unchanged (button disabled on load) in src/pages/CreatePage.tsx
+- [ ] T027 [US3] Verify same postSchema validation rules used for both create and edit in src/schemas/postSchema.ts
+- [ ] T028 [US3] Verify same validateField function logic for both modes in src/components/posts/PostForm.tsx
+- [ ] T029 [US3] Verify same handleFormChange logic for both modes in src/components/posts/PostForm.tsx
+- [ ] T030 [US3] Verify same button disabled logic (hasErrors || !allTouched) for both modes in src/components/posts/PostForm.tsx
+- [ ] T031 [US3] Manual test: Create new post, verify button disabled until all fields valid (quickstart.md checklist item 1)
+- [ ] T032 [US3] Manual test: Verify validation error messages identical between create and edit
+- [ ] T033 [US3] Manual test: Verify whitespace-only input treated as invalid in both modes (quickstart.md checklist item 4)
 
 **Checkpoint**: All user stories should now be independently functional with consistent validation behavior
 
@@ -141,16 +144,16 @@ description: "Task list for Fix Post Edit Validation feature"
 
 **Purpose**: Handle edge cases and verify all requirements are met
 
-- [ ] T033 Manual test: Edit form with invalid initial data (body <10 chars), verify button stays disabled (quickstart.md checklist item 3)
-- [ ] T034 Manual test: Enter whitespace-only in body field, verify button disables (quickstart.md checklist item 4)
-- [ ] T035 Manual test: Rapid typing and deletion in description field, verify validation debounced (quickstart.md checklist item 5)
-- [ ] T036 Manual test: Load edit form, make invalid, revert to original valid state, verify button re-enables
-- [ ] T037 Verify all functional requirements (FR-001 through FR-012) are met per spec.md
-- [ ] T038 Verify all success criteria (SC-001 through SC-004) are met per spec.md
-- [ ] T039 Code review: Verify clean code principles (readable, maintainable, single responsibility)
-- [ ] T040 Code review: Verify no breaking changes to create form functionality
-- [ ] T041 Performance check: Verify button state updates <100ms (SC-002 requirement)
-- [ ] T042 Final manual test: Run through complete quickstart.md testing checklist (all 5 scenarios)
+- [ ] T034 Manual test: Edit form with invalid initial data (body <10 chars), verify button stays disabled (quickstart.md checklist item 3)
+- [ ] T035 Manual test: Enter whitespace-only in body field, verify button disables (quickstart.md checklist item 4)
+- [ ] T036 Manual test: Rapid typing and deletion in description field, verify validation debounced (quickstart.md checklist item 5)
+- [ ] T037 Manual test: Load edit form, make invalid, revert to original valid state, verify button re-enables
+- [ ] T038 Verify all functional requirements (FR-001 through FR-012) are met per spec.md
+- [ ] T039 Verify all success criteria (SC-001 through SC-004) are met per spec.md
+- [ ] T040 Code review: Verify clean code principles (readable, maintainable, single responsibility)
+- [ ] T041 Code review: Verify no breaking changes to create form functionality
+- [ ] T042 Performance check: Verify button state updates <100ms (SC-002 requirement)
+- [ ] T043 Final manual test: Run through complete quickstart.md testing checklist (all 5 scenarios)
 
 ---
 
@@ -353,11 +356,11 @@ After implementation, verify all success criteria from spec.md:
 
 ## Task Summary
 
-**Total Tasks**: 42
+**Total Tasks**: 44
 
 - Phase 1 (Setup): 4 tasks
 - Phase 2 (Foundational): 4 tasks
-- Phase 3 (User Story 1 - P1): 8 tasks
+- Phase 3 (User Story 1 - P1): 10 tasks
 - Phase 4 (User Story 2 - P2): 8 tasks
 - Phase 5 (User Story 3 - P3): 8 tasks
 - Phase 6 (Edge Cases & Polish): 10 tasks
@@ -368,6 +371,6 @@ After implementation, verify all success criteria from spec.md:
 - Phase 2: 4 tasks can run in parallel
 - Phase 4-5: Verification tasks can run in parallel
 
-**MVP Scope**: Phase 1 + Phase 2 + Phase 3 (User Story 1 only) = 16 tasks
+**MVP Scope**: Phase 1 + Phase 2 + Phase 3 (User Story 1 only) = 18 tasks
 
 **Estimated Implementation Time**: 2-4 hours total

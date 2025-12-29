@@ -4,6 +4,9 @@ Auto-generated from all feature plans. Last updated: 2025-12-23
 
 ## Active Technologies
 
+- TypeScript 5.9.3, React 19.2.0 + Ant Design 6.1.2, React Router DOM 7.11.0, TanStack React Query 5.90.12 (005-modal-theme-fix)
+- N/A (UI-only fix) (005-modal-theme-fix)
+
 - TypeScript 5.9.3, React 19.2.0 + Yup 1.7.1 (validation), Ant Design 6.1.2 (UI components), React Hook Form integration via Ant Design Form (001-form-validation)
 - N/A (client-side validation only) (001-form-validation)
 - TypeScript 5.9.3, React 19.2.0 + Vite 7.2.4, Ant Design 6.1.2, React Router 7.11.0, TanStack Query 5.90.12, Yup 1.7.1, Axios 1.13.2 (004-fix-post-edit-validation)
@@ -28,10 +31,10 @@ TypeScript 5.x, React 18.x, Vite 5.x: Follow standard conventions
 
 ## Recent Changes
 
+- 005-modal-theme-fix: Added TypeScript 5.9.3, React 19.2.0 + Ant Design 6.1.2, React Router DOM 7.11.0, TanStack React Query 5.90.12
 - 004-fix-post-edit-validation: Added TypeScript 5.9.3, React 19.2.0 + Vite 7.2.4, Ant Design 6.1.2, React Router 7.11.0, TanStack Query 5.90.12, Yup 1.7.1, Axios 1.13.2
 - 003-post-ui-improvements: Added [if applicable, e.g., PostgreSQL, CoreData, files or N/A]
 - 002-form-validation: Added TypeScript 5.9.3, React 19.2.0 + Yup 1.7.1 (validation), Ant Design 6.1.2 (UI components), React Hook Form integration via Ant Design Form
-
 - 001-initial-page-setup: Added TypeScript 5.x, React 18.x, Vite 5.x + Ant Design 5.x, Yup 1.x, TanStack Query 5.x, Axios 1.x, React Router 6.x
 
 <!-- MANUAL ADDITIONS START -->

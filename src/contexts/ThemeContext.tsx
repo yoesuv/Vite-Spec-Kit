@@ -1,19 +1,9 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import type { ReactNode } from "react";
-import { ConfigProvider, theme } from "antd";
+import { App, ConfigProvider, theme } from "antd";
 import type { ThemeMode, ThemeContextValue } from "../types/post";
-
-const THEME_KEY = "vite-speckit-theme";
-
-const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error("useTheme must be used within a ThemeProvider");
-  }
-  return context;
-};
+import { THEME_KEY } from "./themeConstants";
+import { ThemeContext } from "./useTheme";
 
 interface ThemeProviderProps {
   children: ReactNode;
@@ -46,7 +36,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
             themeMode === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,
         }}
       >
-        {children}
+        <App>{children}</App>
       </ConfigProvider>
     </ThemeContext.Provider>
   );

@@ -1,4 +1,4 @@
-import { message, Spin, Alert } from "antd";
+import { App, Spin, Alert } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import PageHeader from "../components/common/PageHeader";
 import PostForm from "../components/posts/PostForm";
@@ -10,6 +10,7 @@ const EditPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const postId = Number(id);
+  const { message } = App.useApp();
 
   const { data: post, isLoading, isError, error } = usePost(postId);
   const updatePostMutation = useUpdatePost();

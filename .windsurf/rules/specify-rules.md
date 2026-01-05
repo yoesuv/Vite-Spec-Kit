@@ -4,6 +4,9 @@ Auto-generated from all feature plans. Last updated: 2025-12-23
 
 ## Active Technologies
 
+- TypeScript ~5.9.3 + React 19.2.0, Ant Design 6.1.2, React Router DOM 7.11.0, TanStack Query 5.90.12 (006-message-theme-fix)
+- N/A (stateless notifications) (006-message-theme-fix)
+
 - TypeScript 5.9.3, React 19.2.0 + Ant Design 6.1.2, React Router DOM 7.11.0, TanStack React Query 5.90.12 (005-modal-theme-fix)
 - N/A (UI-only fix) (005-modal-theme-fix)
 
@@ -31,6 +34,7 @@ TypeScript 5.x, React 18.x, Vite 5.x: Follow standard conventions
 
 ## Recent Changes
 
+- 006-message-theme-fix: Added TypeScript ~5.9.3 + React 19.2.0, Ant Design 6.1.2, React Router DOM 7.11.0, TanStack Query 5.90.12
 - 005-modal-theme-fix: Added TypeScript 5.9.3, React 19.2.0 + Ant Design 6.1.2, React Router DOM 7.11.0, TanStack React Query 5.90.12
 - 004-fix-post-edit-validation: Added TypeScript 5.9.3, React 19.2.0 + Vite 7.2.4, Ant Design 6.1.2, React Router 7.11.0, TanStack Query 5.90.12, Yup 1.7.1, Axios 1.13.2
 - 003-post-ui-improvements: Added [if applicable, e.g., PostgreSQL, CoreData, files or N/A]

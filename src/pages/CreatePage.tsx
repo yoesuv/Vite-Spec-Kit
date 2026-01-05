@@ -1,4 +1,4 @@
-import { message } from "antd";
+import { App } from "antd";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../components/common/PageHeader";
 import PostForm from "../components/posts/PostForm";
@@ -9,6 +9,7 @@ import type { PostFormData } from "../types/post";
 const CreatePage = () => {
   const navigate = useNavigate();
   const createPostMutation = useCreatePost();
+  const { message } = App.useApp();
 
   const handleSubmit = async (values: PostFormData) => {
     try {

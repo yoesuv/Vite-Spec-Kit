@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { App, Pagination, message, Spin, Alert } from "antd";
+import { App, Pagination, Spin, Alert } from "antd";
 import PostCard from "./PostCard";
 import EmptyState from "./EmptyState";
 import { usePosts, useDeletePost } from "../../hooks/usePosts";
@@ -7,7 +7,7 @@ import { usePosts, useDeletePost } from "../../hooks/usePosts";
 const PostList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 20;
-  const { modal } = App.useApp();
+  const { modal, message } = App.useApp();
 
   const { data, isLoading, isError, error } = usePosts(currentPage);
   const deletePostMutation = useDeletePost();

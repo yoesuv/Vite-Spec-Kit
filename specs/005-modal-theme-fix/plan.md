@@ -3,7 +3,7 @@
 **Branch**: `005-modal-theme-fix` | **Date**: December 28, 2024 | **Spec**: [spec.md](./spec.md)
 **Input**: Feature specification from `/specs/005-modal-theme-fix/spec.md`
 
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
+**Note**: This template is filled in by the `/speckit.plan` command. See `.opencode/commands/speckit.plan.md` for the execution workflow.
 
 ## Summary
 
@@ -122,7 +122,7 @@ All technical unknowns have been resolved and documented in [research.md](./rese
 1. **[data-model.md](./data-model.md)**: Documents that this is a UI-only fix with no data model changes
 2. **[contracts/README.md](./contracts/README.md)**: Confirms no API contract changes required
 3. **[quickstart.md](./quickstart.md)**: Step-by-step implementation guide with verification checklist
-4. **Agent Context**: Updated Windsurf rules with TypeScript, React, and Ant Design context
+4. **Agent Context**: Updated OpenCode project rules with TypeScript, React, and Ant Design context
 
 ### Design Summary
 

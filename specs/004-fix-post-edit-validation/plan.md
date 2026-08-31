@@ -3,7 +3,7 @@
 **Branch**: `004-fix-post-edit-validation` | **Date**: 2025-12-28 | **Spec**: [spec.md](./spec.md)
 **Input**: Feature specification from `/specs/004-fix-post-edit-validation/spec.md`
 
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
+**Note**: This template is filled in by the `/speckit.plan` command. See `.opencode/commands/speckit.plan.md` for the execution workflow.
 
 ## Summary
 

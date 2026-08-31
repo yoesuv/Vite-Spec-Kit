@@ -41,10 +41,29 @@ no unit test, integration test or other test at all.
 | ![](https://i.imgur.com/NdvhAML.png) | ![](https://i.imgur.com/6s4oCEI.png) |
 | ![](https://i.imgur.com/Xm3MKZV.png) | ![](https://i.imgur.com/SFCnQ0H.png) |
 
-### Packages
+### Tech Stack
 
-- [Ant Design](https://ant.design/)
-- [TanStack Query](https://tanstack.com/query/latest)
-- [Yup](https://github.com/jquense/yup)
-- [React Router DOM](https://reactrouter.com/)
-- [Axios](https://axios-http.com/)
+| Category          | Technology                                                                         | Version               | Purpose                                                      |
+| ----------------- | ---------------------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------ |
+| **Build Tool**    | [Vite](https://vite.dev/)                                                          | `^8.2.2`              | Next-gen frontend bundler & dev server                       |
+| **Framework**     | [React](https://react.dev/)                                                        | `^19.2.0`             | UI library (with `react-dom` `^19.2.0`)                      |
+| **Language**      | [TypeScript](https://www.typescriptlang.org/)                                      | `~5.9.3`              | Strict type checking                                         |
+| **UI Library**    | [Ant Design](https://ant.design/)                                                  | `^6.6.2`              | Enterprise-class component library                           |
+| **Icons**         | [@ant-design/icons](https://ant.design/components/icon/)                           | `^6.3.2`              | Ant Design icon set                                          |
+| **Vite Plugin**   | [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react)                | `^6.1.1`              | React Fast Refresh & JSX transform                           |
+| **Routing**       | [React Router DOM](https://reactrouter.com/)                                       | `^7.11.0`             | Declarative client-side routing                              |
+| **Data Fetching** | [TanStack Query](https://tanstack.com/query/latest)                                | `^5.90.12`            | Server state, caching & sync                                 |
+| **HTTP Client**   | [Axios](https://axios-http.com/)                                                   | `^1.13.2`             | Promise-based HTTP requests                                  |
+| **Validation**    | [Yup](https://github.com/jquense/yup)                                              | `^1.7.1`              | Schema validation for forms                                  |
+| **Compiler**      | [babel-plugin-react-compiler](https://react.dev/learn/react-compiler)              | `^1.0.0`              | React Compiler optimization                                  |
+| **Linting**       | [ESLint](https://eslint.org/) + [typescript-eslint](https://typescript-eslint.io/) | `^9.39.1` / `^8.46.4` | Static analysis & code quality                               |
+| **Node**          | [Node.js](https://nodejs.org/)                                                     | `>=20.19.0`           | Required for Vite 8 (documented, not enforced via `engines`) |
+
+**Scripts**
+
+```bash
+npm run dev      # Start Vite dev server (HMR)
+npm run build    # Type-check (tsc -b) + production build
+npm run lint     # ESLint
+npm run preview  # Serve production build
+```

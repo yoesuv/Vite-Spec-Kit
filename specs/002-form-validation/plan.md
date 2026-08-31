@@ -3,7 +3,7 @@
 **Branch**: `001-form-validation` | **Date**: 2025-12-25 | **Spec**: [spec.md](./spec.md)
 **Input**: Feature specification from `/specs/001-form-validation/spec.md`
 
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
+**Note**: This template is filled in by the `/speckit.plan` command. See `.opencode/commands/speckit.plan.md` for the execution workflow.
 
 ## Summary
 
@@ -202,7 +202,7 @@ _Re-checking after Phase 1 design completion_
 | Data Model          | ✅ Complete | `specs/001-form-validation/data-model.md`                    |
 | Validation Contract | ✅ Complete | `specs/001-form-validation/contracts/validation-contract.md` |
 | Quickstart Guide    | ✅ Complete | `specs/001-form-validation/quickstart.md`                    |
-| Agent Context       | ✅ Updated  | `.windsurf/rules/specify-rules.md`                           |
+| Agent Context       | ✅ Updated  | `AGENTS.md`                                                   |
 
 ---
 

@@ -3,7 +3,7 @@
 **Branch**: `001-initial-page-setup` | **Date**: December 23, 2025 | **Spec**: [spec.md](./spec.md)
 **Input**: Feature specification from `/specs/001-initial-page-setup/spec.md`
 
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
+**Note**: This template is filled in by the `/speckit.plan` command. See `.opencode/commands/speckit.plan.md` for the execution workflow.
 
 ## Summary
 

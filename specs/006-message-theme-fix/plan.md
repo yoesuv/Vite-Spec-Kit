@@ -3,7 +3,7 @@
 **Branch**: `006-message-theme-fix` | **Date**: 2026-01-05 | **Spec**: [spec.md](./spec.md)
 **Input**: Feature specification from `/specs/006-message-theme-fix/spec.md`
 
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
+**Note**: This template is filled in by the `/speckit.plan` command. See `.opencode/commands/speckit.plan.md` for the execution workflow.
 
 ## Summary
 
